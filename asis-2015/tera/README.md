@@ -37,7 +37,7 @@ File ini sangat besar (31 TB), jadi tidak mungkin bisa selesai didownload:
     * transfer closed with 34359739943392 bytes remaining to read
     * Closing connection 0
 
-Karena tidak mungkinen membaca keseluruhan file, yang bisa kita lakukan adalah membaca kodenya.
+Karena tidak mungkin membaca keseluruhan file, yang bisa kita lakukan adalah membaca kodenya.
 Dari situ diketahui bahwa hanya beberapa byte saja yang dibutuhkan.
 
 Algoritma utama kira-kira seperti ini:
