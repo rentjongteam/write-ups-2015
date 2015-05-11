@@ -54,7 +54,7 @@ Saya coba ekstrak dengan `binwalk -e`, tapi hasilnya tidak bisa dibaca. Saya cob
 
 Ternyata file pdfnya bisa dibuka, dan berisi informasi tentang ZPAQ
 
-![ZPAQ](/pdf.png?raw=true "ZPAQ")
+![ZPAQ](./pdf.png?raw=true "ZPAQ")
 
 
 Saya segera mencari ZPAQ, dan yang ketemu pertama adalah : [http://mattmahoney.net/dc/zpaq.html](http://mattmahoney.net/dc/zpaq.html)
@@ -87,7 +87,7 @@ Saya download filenya, compile, dan saya coba ekstrak:
 
 Didapatkan flag bagian 1 di file `007/flag`:
 
-![Flag Bagian 1](/flag-part-1.png?raw=true "Flag Bagian 1")
+![Flag Bagian 1](./flag-part-1.png?raw=true "Flag Bagian 1")
 
 Sekarang di mana sisanya? Saya coba buka file `0001/flag` yang ternyata merupakan file zpaq juga. Tapi ketika dicoba ekstrak:
 
