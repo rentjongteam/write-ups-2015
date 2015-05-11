@@ -1,5 +1,8 @@
 # Dump
 
+**Kategori:** Forensik
+**Points:** 250
+
 **Deskripsi**
 
 > Where is flag in this file?

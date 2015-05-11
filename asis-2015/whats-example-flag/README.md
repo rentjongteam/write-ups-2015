@@ -1,5 +1,9 @@
 #What's example flag?
 
+**Kategori:** Trivia
+**Points:** 1
+
+
 **Deskripsi**
 > Find the example flag
 

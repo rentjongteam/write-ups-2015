@@ -1,4 +1,7 @@
-# Grid
+# Grids
+
+**Kategori:** Programming
+**Points:** 300
 
 **Deskripsi**
 > In each stage send the maximun size of area that can be covered by given points as a vertex of polygon in 2D.
