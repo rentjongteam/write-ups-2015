@@ -131,8 +131,40 @@ Setelah putus asa, akhirnya saya patch source codenya supaya meneruskan jika err
    }
 ```
 
-TODO: bahas lebih detail proses ekstrasi flagnya.
+
+Terlihat ada 17 kotak yang harus dicari isinya, dengan melihat isi file `0001/flag` yang telah saya rename menjadi `flag.zpaq`:
+
+      ./zpaq list flag.zpaq
+      ...
+      17 versions, 1 files, 1 fragments, 0.030580 MB
+      ...
+
+Pas ada 17 versi file. Sebelumnya saya bisa langsung extract dengan parameter -all, tapi kali ini karena error, harus dilakukan satu per satu:
+
+      for((i=1;i<18;i++)); do ./zpaq extract flag.zpaq -until $i; mv flag flag-$i.png; done
+
 
 Flag didapatkan dengan mengekstrak tiap versi file, masing-masing berisi satu karakter flag, sampai karakter terakhir.
- 
- 
+
+ Berikut ini adalah karakter-karakter yang didapat:
+
+ ![flag-1](./flag-1.png?raw=true "Flag-1")
+ ![flag-2](./flag-2.png?raw=true "Flag-2")
+ ![flag-3](./flag-3.png?raw=true "Flag-3")
+ ![flag-4](./flag-4.png?raw=true "Flag-4")
+ ![flag-5](./flag-5.png?raw=true "Flag-5")
+ ![flag-6](./flag-6.png?raw=true "Flag-6")
+ ![flag-7](./flag-7.png?raw=true "Flag-7")
+ ![flag-8](./flag-8.png?raw=true "Flag-8")
+ ![flag-9](./flag-9.png?raw=true "Flag-9")
+ ![flag-10](./flag-10.png?raw=true "Flag-10")
+ ![flag-11](./flag-11.png?raw=true "Flag-11")
+ ![flag-12](./flag-12.png?raw=true "Flag-12")
+ ![flag-13](./flag-13.png?raw=true "Flag-13")
+ ![flag-14](./flag-14.png?raw=true "Flag-14")
+ ![flag-15](./flag-15.png?raw=true "Flag-15")
+ ![flag-16](./flag-16.png?raw=true "Flag-16")
+ ![flag-17](./flag-17.png?raw=true "Flag-17")
+
+
+FLAG: `ASIS{0e9800346489a3ac4f30c45976e325cf}`
