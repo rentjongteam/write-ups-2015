@@ -1,6 +1,6 @@
-#Simple Algorithm
+#My Heart
 
-**Kategori:** Crypto
+**Kategori:** Forensik
 **Points:** 100
 **Deskripsi**
 > Find the flag in this [file](soal/myheart_7cb6daec0c45b566b9584f98642a7123.pcap.xz).
