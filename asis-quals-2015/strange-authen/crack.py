@@ -1,5 +1,4 @@
 from hashlib import md5
-from sys import argv
 
 words = (open("/Volumes/exia/Pentest/tools/Dictionaries/hashkiller.com.dic", 'r')).readlines()
 realm="this page for admin only, go out now!"
