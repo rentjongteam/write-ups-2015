@@ -11,4 +11,4 @@
 
 Challenge ini merupakan soal bonus tetapi karena nilainya cukup besar (100) maka mengapa tidak :)
 
-Cukup dengan hanya dengan mengisi survey terkait CTF ini dan apabila selesai mengisi kita akan dapatkan flag-nya.
+Cukup hanya dengan mengisi survey terkait CTF ini dan apabila selesai mengisi kita akan dapatkan flag-nya.

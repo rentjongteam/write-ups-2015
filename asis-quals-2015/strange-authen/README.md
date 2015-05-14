@@ -26,7 +26,7 @@ file pcap ini sebenarnya tidak sempurna sehingga apabila di buka dengan wireshar
 
 ![http-digest-auth](./4.png?raw=true “http-digest-auth”)
 
-Dikarenakan dari hasil capture hanya user factoreal yang terlihat mengakses halaman login.php, maka selanjutnya saya mencoba me-replay session yang di pergunakan dan berhasil login tetapi saat mengakses file yang berkemungkinan besar terdapat flag di dalamnya masih belum berhasil, maka saya mencoba untuk melakukan crack terhadap passwordnya dan di dapatkan user factoreal dengan password: secpass
+Dikarenakan dari hasil capture hanya user factoreal yang terlihat mengakses halaman login.php, maka selanjutnya saya mencoba me-replay session yang di pergunakan dan berhasil login tetapi saat mengakses file yang berkemungkinan besar terdapat flag di dalamnya masih belum berhasil, maka saya mencoba untuk melakukan crack terhadap passwordnya dengan `crack.py` dan di dapatkan user factoreal dengan password: secpass
 
 ![cracking-user-factorial-password](./5.png?raw=true “cracking user factorial password”)
 
