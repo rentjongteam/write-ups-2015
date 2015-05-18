@@ -1,0 +1,6 @@
+set prompt 
+break *0x0000000000400789
+run
+info registers
+quit
+
