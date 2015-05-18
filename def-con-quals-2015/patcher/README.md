@@ -51,7 +51,7 @@ vagrant@cgc-linux-packer:/vagrant$ diff -ruN cgc-orig cgc
   8048897:      c7 80 90 13 00 00 00    movl   $0x0,0x1390(%eax)
 ```
 
-Saya gak membabi buta mempatch tiga lokasi sekaligus supaya yakin (dan ternyata benar dalam sekali coba)
+Saya agak membabi buta mempatch tiga lokasi sekaligus supaya yakin (dan ternyata benar dalam sekali coba). Saya mengupload setelah menguji bahwa exploit saya yang sebelumnya tidak lagi berfungsi di binary yang baru.
 
 Patch pertama: saya tingkatkan alokasi dari 0x10000 menjadi 0x90000 dan 0x1394 menjadi 0x4494. Lalu saya geser asal variabel dari 0x1388 menjadi 0x4e20
 
