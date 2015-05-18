@@ -31,7 +31,7 @@ Kita perlu tahu alamat buffer (yang ada di `esp+0x1c`):
 	08048FF4                 mov     [esp], eax
 	08048FF7                 call    readbytes
 
-Penggunaan `%n` tidak diperkenankan (akan diubah oleh program menjadi `_n`), jadi kita perlu memakai `%n`. Karena buffer sangat kecil, tidak mungkin menggunakan '%p%p%p%p%p%p' agar kurang dari 13 karakter. Butuh agak lama bagi saya untuk menemukan tentang penggunaan `%$` untuk indexing parameter pada `printf`. Saya menggunakan cara sederhana untuk mengekspand buffernya: pertama cari tahu dulu alamat buffernya dengan `%d%d%d%d%p`, lalu saya kurangi dengan `0xc` (karena ada di `[esp+0x10]`), 
+Penggunaan `%n` tidak diperkenankan (akan diubah oleh program menjadi `_n`), jadi kita perlu memakai `%hn`. Karena buffer sangat kecil, tidak mungkin menggunakan '%p%p%p%p%p%p' agar kurang dari 13 karakter. Butuh agak lama bagi saya untuk menemukan tentang penggunaan `%$` untuk indexing parameter pada `printf`. Saya menggunakan cara sederhana untuk mengekspand buffernya: pertama cari tahu dulu alamat buffernya dengan `%d%d%d%d%p`, lalu saya kurangi dengan `0xc` (karena ada di `[esp+0x10]`), 
 
      tosend = q(stack-0xc) + "%m%7$hn\n"
 
