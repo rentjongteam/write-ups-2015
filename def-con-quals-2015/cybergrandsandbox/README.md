@@ -71,9 +71,46 @@ Memori | Isi
 00099  | var8
 
 
-Intinya adalah: Jika kita menginput bilangan terlalu banyak, maka ketika dijalankan, kode mesin yang dihasilkan akan menimpa sampai bagian yang berisi nilai variabel. Karena kita bisa mengendalikan nilai variabel, kita bisa membuat shellcode yang akan dijalankan.
+Intinya adalah: Jika kita menginput bilangan terlalu banyak, maka ketika dijalankan, kode mesin yang dihasilkan akan menimpa sampai bagian yang berisi nilai variabel. 
 
-Kita harus menulis sendiri shell code untuk CGC ini karena syscall yang dipakai berbeda dengan binary linux biasa. Setelah membaca `man`  mengenai `transmit` dan `receive`, saya bisa mengetahui syscall number untuk keduanya 
+
+Kalau yang benerannya seperti ini: untuk input `1 2 3`, kode yang dihasilkan:
+
+	Dump of assembler code from 0xb7fed000 to 0xb7fed064:
+	   0xb7fed000:  55      push   ebp
+	   0xb7fed001:  8b ec   mov    ebp,esp
+	   0xb7fed003:  81 ec ff 00 00 00       sub    esp,0xff
+	   0xb7fed009:  51      push   ecx
+	   0xb7fed00a:  31 c0   xor    eax,eax
+	   0xb7fed00c:  89 c2   mov    edx,eax
+	   0xb7fed00e:  b9 84 e3 fe b7  mov    ecx,0xb7fee384
+	   0xb7fed013:  89 39   mov    DWORD PTR [ecx],edi
+	   0xb7fed015:  97      xchg   edi,eax
+	   0xb7fed016:  b8 01 00 00 00  mov    eax,0x1
+	   0xb7fed01b:  b9 80 e3 fe b7  mov    ecx,0xb7fee380
+	   0xb7fed020:  89 39   mov    DWORD PTR [ecx],edi
+	   0xb7fed022:  97      xchg   edi,eax
+	   0xb7fed023:  b8 02 00 00 00  mov    eax,0x2
+	   0xb7fed028:  b9 7c e3 fe b7  mov    ecx,0xb7fee37c
+	   0xb7fed02d:  89 39   mov    DWORD PTR [ecx],edi
+	   0xb7fed02f:  97      xchg   edi,eax
+	   0xb7fed030:  b8 03 00 00 00  mov    eax,0x3
+	   0xb7fed035:  59      pop    ecx
+	   0xb7fed036:  8b e5   mov    esp,ebp
+	   0xb7fed038:  5d      pop    ebp
+	   0xb7fed039:  c3      ret
+	   
+Perhatikan di alamat `0xb7fed013` kodenya menulis ke `0xb7fee384`
+
+	   0xb7fed00e:  b9 84 e3 fe b7  mov    ecx,0xb7fee384
+	   0xb7fed013:  89 39   mov    DWORD PTR [ecx],edi
+
+Dan di alamat `0xb7fed020`, kodenya menulis ke `0xb7fee380` (lihat 3 digit terakhir, turun dari `384` ke `380`)
+
+	   0xb7fed01b:  b9 80 e3 fe b7  mov    ecx,0xb7fee380
+	   0xb7fed020:  89 39   mov    DWORD PTR [ecx],edi
+
+jadi lama-lama akan ada "tabrakan" karena  jarak paling awal hanya 4977 bytes. Karena kita bisa mengendalikan nilai variabel, kita bisa membuat shellcode yang akan dijalankan. Kita harus menulis sendiri shell code untuk CGC ini karena syscall yang dipakai berbeda dengan binary linux biasa. Setelah membaca `man`  mengenai `transmit` dan `receive`, saya bisa mengetahui syscall number untuk keduanya 
 
      The transmit function is invoked through system call number 2.
      The receive function is invoked through system call number 3.
