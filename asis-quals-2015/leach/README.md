@@ -31,6 +31,8 @@ Tapi ketika dijalankan:
 
     LD_PRELOAD=./s.so ./leach
 
+Ternyata hasilnya kacau.
+
 Tanpa membaca programnya, saya mengambil kesimpulan bahwa program memperhatikan waktu, jadi misalnya sekarang t=0,
 setelah sleep 10, maka program berharap ketika memanggil time lagi, waktu sudah t=10.
 Dengan dugaan itu saya membuat preload baru:
