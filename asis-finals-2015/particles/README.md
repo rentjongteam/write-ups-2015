@@ -24,4 +24,4 @@ Catatan: sebelum CTF ini berakhir, ada orang yang mengupload filenya ke sever, j
 
 Tapi saya yang solve pertama, jadi ketika saya solve, file itu belum ada:
 
-![pertama](./particles.jpg?raw=true Pertama")
+![pertama](./particles.jpg?raw=true "Pertama")

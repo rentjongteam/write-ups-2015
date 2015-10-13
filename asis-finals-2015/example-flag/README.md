@@ -1,4 +1,4 @@
-# Particles
+# What's example flag?
 
 **Kategori:** Misc
 **Points:** 1
