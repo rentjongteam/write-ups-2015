@@ -32,10 +32,12 @@ Tapi ketika berusaha didecode:
     TypeError: Odd-length string
 
 Kita tambahkan saja `0` di depan:
+
     >>> '0a7d30363063346262616338356133653036663535303863343836616531653138397b53495341'.decode("hex")
     '\n}060c4bbac85a3e06f5508c486ae1e189{SISA'
 
 Ternyata terbalik stringnya:
+
     >>> '0a7d30363063346262616338356133653036663535303863343836616531653138397b53495341'.decode("hex")[::-1]
     'ASIS{981e1ea684c8055f60e3a58cabb4c060}\n'
     

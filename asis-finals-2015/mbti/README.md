@@ -30,7 +30,7 @@ for i in cap:
 
 ```
 
-Berikut ini beberapa baris awal (saya reqirect outputnye ke file bernama `flow`):
+Berikut ini beberapa baris awal (saya redirect outputnye ke file bernama `flow`):
 
     APP DATA  192.168.110.13 487 
     APP DATA  185.45.192.218 1367
